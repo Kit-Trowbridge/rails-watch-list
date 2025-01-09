@@ -2,6 +2,10 @@
   <%= @list.name %>
 </h1>
 
+<%= link_to 'Add a movie', new_list_bookmark_path(@list) %>
+
 <ul>
   <li>insert movie names</li>
 </ul>
+
+<%= link_to 'Back to all lists', lists_path %>

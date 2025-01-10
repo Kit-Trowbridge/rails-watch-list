@@ -4,7 +4,7 @@ class List < ApplicationRecord
   # (but not the movies as they can be referenced in other lists).
   has_many :bookmarks, dependent: :destroy
   # A list has many movies through bookmarks
-  has_many :movies, through: :bookmarks
+  has_many :movies, through: :bookmarks, dependent: :destroy
 
   # A list must have a unique name.
   validates :name, presence: true, uniqueness: true

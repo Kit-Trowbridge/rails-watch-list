@@ -1,11 +1,27 @@
-<h1 class="container">My Watch Lists</h1>
+<h1 class="banner">My Watch Lists</h1>
 
 <%= link_to 'Add a new list', new_list_path %>
+<!--
+  <ul>
+    <% @lists.each do |list| %>
+      <li>
+        <%= link_to list.name, list_path(list) %>
+      </li>
+    <% end %>
+  </ul>
+-->
 
-<ul>
+
+
+
+<div class="d-flex m-4">
   <% @lists.each do |list| %>
-    <li>
-      <%= link_to list.name, list_path(list) %>
-    </li>
+    <div class="card me-4" style="width: 18rem;">
+    <%= image_tag "placeholder.png", class: "card-img-top", alt: "film-poster" %>
+    <!--<img src="../../assets/images/placeholder.png" class="card-img-top" alt="film-poster">-->
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to list.name, list_path(list) %></h5>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
